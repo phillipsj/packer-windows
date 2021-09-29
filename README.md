@@ -1,21 +1,18 @@
 # Windows Templates for Packer
 
-[![Build status](https://ci.appveyor.com/api/projects/status/76pea1oexae5ca05?svg=true)](https://ci.appveyor.com/project/StefanScherer/packer-windows)
-
 ### Introduction
 
-This repository contains Windows templates that can be used to create boxes for
-Vagrant using Packer ([Website](https://www.packer.io))
-([Github](https://github.com/mitchellh/packer)).
+This repository contains Windows Server 2019 and 2022 templates that can be used to create boxes for
+Vagrant providers for libvirt, Hyper-V, and VirtualBox using Packer ([Website](https://www.packer.io))
+([Github](https://github.com/mitchellh/packer)). In addition Azure and AWS will be supported too.
+
+Currently, there isn't a common Vagrant box available for Windows across most of the Vagrant providers. The goal is to create one for at least three of the providers.
 
 This repo is a modified fork of the popular
+[StefanScherer/packer-windows](https://github.com/StefanScherer/packer-windows)
+repo which is a modified fork of the popular
 [joefitzgerald/packer-windows](https://github.com/joefitzgerald/packer-windows)
 repo.
-
-Some of my enhancements are:
-
-* Support of fullscreen Retina display on a MacBook Pro.
-* WinRM, no more OpenSSH
 
 ### Packer Version
 
@@ -23,21 +20,11 @@ Some of my enhancements are:
 
 ### Windows Versions
 
-The following Windows versions are known to work (built with VMware Fusion Pro
-11.0.2):
+The focus is only on Windows Server LTSC releases, 2022 and 2019, without Desktop Experience.
 
-* Windows 10
-  * Windows 10 2004 -> Vagrant Cloud box [StefanScherer/windows_10](https://app.vagrantup.com/StefanScherer/boxes/windows_10)
-  * Windows 10 Insider
-* Windows Server 2022 Desktop -> Vagrant Cloud box [StefanScherer/windows_2022](https://app.vagrantup.com/StefanScherer/boxes/windows_2022)
-* Windows Server 2019 Desktop -> Vagrant Cloud box [StefanScherer/windows_2019](https://app.vagrantup.com/StefanScherer/boxes/windows_2019)
-* Windows Server Core
-  * Windows Server 2019 without and with Docker -> Vagrant Cloud box [StefanScherer/windows_2019_docker](https://app.vagrantup.com/StefanScherer/boxes/windows_2019_docker)
-  * Windows Server 1709, 1803, 1809, 1903, 1909, and 2004 all without and with Docker
-  * Windows Server InsiderPreview Semi-Annual without and with Docker
+* Windows Server 2022 Core -> Vagrant Cloud box [phillipsj/windows_2022](https://app.vagrantup.com/phillipsj/boxes/windows_2022)
+* Windows Server 2019 Core -> Vagrant Cloud box [phillipsj/windows_2019](https://app.vagrantup.com/phillips/boxes/windows_2019)
 
-You may find other packer template files, but older versions of Windows doesn't
-work so nice with a Retina display.
 
 ### Windows Editions
 
