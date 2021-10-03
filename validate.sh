@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for template in $(ls -1 *.json); do
+for template in $(ls -1 *.pkr.hcl); do
   echo $template
-  packer validate --only=vmware-iso --only=virtualbox-iso $template
+  packer validate $template
 done
