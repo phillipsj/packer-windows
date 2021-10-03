@@ -19,3 +19,5 @@ tmp
 /issues/
 *.iso
 path-to.vmx
+
+.idea/
