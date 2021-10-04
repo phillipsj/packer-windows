@@ -10,12 +10,14 @@ import (
 
 type Packer struct {
 	Directory string
+	Executable string
 	Extension string
 }
 
 func PackerDefault(dir string) *Packer {
 	return &Packer{
 		Directory: dir,
+		Executable: "packer",
 		Extension: ".pkr.hcl",
 	}
 }
@@ -26,7 +28,7 @@ func (p *Packer) Init() error {
 		log.Fatal(err)
 	}
 	for _, file := range files {
-		if err := sh.Run("packer", "init", file); err != nil {
+		if err := sh.Run(p.Executable, "init", file); err != nil {
 			return err
 		}
 	}
@@ -39,7 +41,7 @@ func (p *Packer) Validate() error {
 		log.Fatal(err)
 	}
 	for _, file := range files {
-		if err := sh.Run("packer", "validate", file); err != nil {
+		if err := sh.Run(p.Executable, "validate", file); err != nil {
 			return err
 		}
 	}
